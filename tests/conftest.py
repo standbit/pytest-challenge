@@ -1,10 +1,16 @@
 import pytest
-import requests
+from random import randrange
 
-
-SERVICE_URL="https://gorest.co.in/public/v1/users"
 
 @pytest.fixture
-def get_users():
-    response = requests.get(SERVICE_URL)
-    return response
+def get_number():
+    return randrange(1, 100, 5)
+
+
+def _calculate(a, b):
+    return a + b
+
+
+@pytest.fixture
+def calculate():
+    return _calculate
