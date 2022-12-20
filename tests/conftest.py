@@ -8,7 +8,9 @@ def get_number():
 
 
 def _calculate(a, b):
-    return a + b
+    if isinstance(a, int) and isinstance(b, int):
+        return a + b
+    return None
 
 
 @pytest.fixture
@@ -18,8 +20,8 @@ def calculate():
 
 @pytest.fixture
 def make_number():
-    print("I'm getting number")
+    # print("I'm getting number")
     number = randrange(1, 1000, 55)
     #передача потока - управления
     yield number
-    print(f"Number at home {number}")
+    # print(f"Number at home {number}")
