@@ -28,3 +28,15 @@ class Response:
             f"\nStatus code: {self.response_status} \n" \
             f"Requested url: {self.response.url} \n" \
             f"Response body: {self.response_json}"
+
+class Content:
+    def __init__(self, content):
+        self.content = content
+
+    def validate(self, schema):
+        if isinstance(self.content, list):
+            for item in self.content:
+                schema.parse_obj(item)
+        else:
+            schema.parse_obj(self.content)
+        return self

@@ -10,3 +10,4 @@ class Statuses(Enum):
 
 class UserErrors(Enum):
     WRONG_EMAIL = 'Email doesn\'t contain @'
+    WRONG_ADDRESS = 'Address isn\'t correct'
